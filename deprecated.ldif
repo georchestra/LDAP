@@ -1,0 +1,83 @@
+
+# EL_admin_GR, groups, georchestra.org
+dn: cn=EL_admin_GR,ou=groups,dc=georchestra,dc=org
+objectClass: top
+objectClass: posixGroup
+cn: EL_admin_GR
+gidNumber: 3
+memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+description: Partner A GeOrchestra
+
+# EL_editor_GR, groups, georchestra.org
+dn: cn=EL_editor_GR,ou=groups,dc=georchestra,dc=org
+objectClass: top
+objectClass: posixGroup
+cn: EL_editor_GR
+gidNumber: 4
+memberUid: uid=testeditor,ou=users,dc=georchestra,dc=org
+memberUid: uid=testreviewer,ou=users,dc=georchestra,dc=org
+
+
+# EL_reviewer_GR, groups, georchestra.org
+dn: cn=EL_reviewer_GR,ou=groups,dc=georchestra,dc=org
+objectClass: top
+objectClass: posixGroup
+gidNumber: 7
+cn: EL_reviewer_GR
+description: testreviewer is in this group
+memberUid: uid=testreviewer,ou=users,dc=georchestra,dc=org
+
+# EL_user_admin_GR, groups, georchestra.org
+dn: cn=EL_user_admin_GR,ou=groups,dc=georchestra,dc=org
+objectClass: top
+objectClass: posixGroup
+gidNumber: 8
+cn: EL_user_admin_GR
+description: user and admins are in this group
+memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+memberUid: uid=testuser,ou=users,dc=georchestra,dc=org
+
+# GS_ADMIN, groups, georchestra.org
+dn: cn=GS_ADMIN,ou=groups,dc=georchestra,dc=org
+objectClass: top
+objectClass: posixGroup
+gidNumber: 10
+cn: GS_ADMIN
+description: gsadmin is in this group
+memberUid: uid=gsadmin,ou=users,dc=georchestra,dc=org
+memberUid: uid=extractorapp_privileged_admin,ou=users,dc=georchestra,dc=org
+memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+
+# gsadmin, users, georchestra.org
+dn: uid=gsadmin,ou=users,dc=georchestra,dc=org
+sn: Person
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+uid: gsadmin
+cn: gsadmin
+description: USER
+description: ADMIN
+userPassword:: e1NIQX1lTTk5M1F1Ym1NOGI4NERKL1BUSWJUZ1dRUVE9
+mail: yves.jacolin@camptocamp.com
+
+# GS_ADMIN_District1, groups, georchestra.org
+dn: cn=GS_ADMIN_District1,ou=groups,dc=georchestra,dc=org
+memberUid: uid=gsadmin,ou=users,dc=georchestra,dc=org
+memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+gidNumber: 8
+objectClass: posixGroup
+objectClass: top
+description: gsadmin is in this group
+cn: GS_ADMIN_District1
+
+# GS_ADMIN_District2, groups, georchestra.org
+dn: cn=GS_ADMIN_District2,ou=groups,dc=georchestra,dc=org
+memberUid: uid=gsadmin,ou=users,dc=georchestra,dc=org
+memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+gidNumber: 8
+objectClass: posixGroup
+objectClass: top
+description: gsadmin is in this group
+cn: GS_ADMIN_District2
