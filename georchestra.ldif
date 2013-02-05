@@ -28,29 +28,37 @@ objectClass: organizationalUnit
 objectClass: top
 ou: groups
 
+# ADMINISTRATOR, groups, georchestra.org
+dn: cn=ADMINISTRATOR,ou=groups,dc=georchestra,dc=org
+objectClass: top
+objectClass: posixGroup
+gidNumber: 1
+cn: ADMINISTRATOR
+memberUid: uid=extractorapp_privileged_admin,ou=users,dc=georchestra,dc=org
+memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+
 # SV_ADMIN, groups, georchestra.org
 dn: cn=SV_ADMIN,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: posixGroup
-gidNumber: 1
+gidNumber: 2
 cn: SV_ADMIN
 memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
-memberUid: uid=gsadmin,ou=users,dc=georchestra,dc=org
 
-# SV_USER, groups, georchestra.org
-dn: cn=SV_USER,ou=groups,dc=georchestra,dc=org
+# SV_ADMIN_USERS, groups, georchestra.org
+dn: cn=SV_ADMIN_USERS,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: posixGroup
-gidNumber: 2
-cn: SV_USER
-memberUid: uid=testuser,ou=users,dc=georchestra,dc=org
+gidNumber: 3
+cn: SV_ADMIN_USERS
+memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
 
 # SV_EDITOR, groups, georchestra.org
 dn: cn=SV_EDITOR,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: posixGroup
 cn: SV_EDITOR
-gidNumber: 5
+gidNumber: 4
 memberUid: uid=testeditor,ou=users,dc=georchestra,dc=org
 
 # SV_REVIEWER, groups, georchestra.org
@@ -58,24 +66,22 @@ dn: cn=SV_REVIEWER,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: posixGroup
 cn: SV_REVIEWER
-gidNumber: 6
+gidNumber: 5
 memberUid: uid=testreviewer,ou=users,dc=georchestra,dc=org
+
+# SV_USER, groups, georchestra.org
+dn: cn=SV_USER,ou=groups,dc=georchestra,dc=org
+objectClass: top
+objectClass: posixGroup
+gidNumber: 6
+cn: SV_USER
+memberUid: uid=testuser,ou=users,dc=georchestra,dc=org
 
 # users, georchestra.org
 dn: ou=users,dc=georchestra,dc=org
 objectClass: organizationalUnit
 objectClass: top
 ou: users
-
-# ADMINISTRATOR, groups, georchestra.org
-dn: cn=ADMINISTRATOR,ou=groups,dc=georchestra,dc=org
-objectClass: top
-objectClass: posixGroup
-gidNumber: 9
-cn: ADMINISTRATOR
-memberUid: uid=extractorapp_privileged_admin,ou=users,dc=georchestra,dc=org
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
-memberUid: uid=gsadmin,ou=users,dc=georchestra,dc=org
 
 # testuser, users, georchestra.org
 dn: uid=testuser,ou=users,dc=georchestra,dc=org
@@ -140,6 +146,5 @@ objectClass: top
 mail: psc@georchestra.org
 uid: extractorapp_privileged_admin
 cn: extractorapp_privileged_admin
-description: Do not modify.  This is a required user for extractorapp to funct
- ion
+description: Do not modify.  This is a required user for extractorapp
 userPassword:: e1NIQX1XMlY4d2UrOFdNanpma28rMUtZVDFZcWZFVDQ9
