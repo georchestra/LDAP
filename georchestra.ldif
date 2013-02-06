@@ -45,12 +45,20 @@ gidNumber: 3
 cn: SV_ADMIN_USERS
 memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
 
+# STAT_USER, groups, georchestra.org
+dn: cn=STAT_USER,ou=groups,dc=georchestra,dc=org
+objectClass: top
+objectClass: posixGroup
+cn: STAT_USER
+gidNumber: 4
+memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+
 # SV_EDITOR, groups, georchestra.org
 dn: cn=SV_EDITOR,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: posixGroup
 cn: SV_EDITOR
-gidNumber: 4
+gidNumber: 5
 memberUid: uid=testeditor,ou=users,dc=georchestra,dc=org
 
 # SV_REVIEWER, groups, georchestra.org
@@ -58,16 +66,17 @@ dn: cn=SV_REVIEWER,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: posixGroup
 cn: SV_REVIEWER
-gidNumber: 5
+gidNumber: 6
 memberUid: uid=testreviewer,ou=users,dc=georchestra,dc=org
 
 # SV_USER, groups, georchestra.org
 dn: cn=SV_USER,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: posixGroup
-gidNumber: 6
+gidNumber: 7
 cn: SV_USER
 memberUid: uid=testuser,ou=users,dc=georchestra,dc=org
+
 
 # users, georchestra.org
 dn: ou=users,dc=georchestra,dc=org
@@ -83,7 +92,10 @@ objectClass: person
 objectClass: inetOrgPerson
 objectClass: top
 mail: psc@georchestra.org
+o: geOrchestra
 uid: testuser
+givenName: Test
+sn: USER
 description: USER
 userPassword:: e1NIQX1SY1Z4b1ZiZHp2UVRVYWNUdk4zdVc2ZnBWR0E9
 cn: testuser
@@ -96,9 +108,12 @@ objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 uid: testreviewer
+givenName: Test
+sn: REVIEWER
 description: Reviewer
 userPassword:: e1NIQX1Nb3IzdXZ5cnpISWpHK0crSEcvblhxZW8reWc9
 mail: psc@georchestra.org
+o: geOrchestra
 cn: testreviewer
 
 # testeditor, users, georchestra.org
@@ -109,9 +124,12 @@ objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 uid: testeditor
+givenName: Test
+sn: EDITOR
 description: editor
 userPassword:: e1NIQX1mVTFvSmdzV0FEZ1ZtTHBHeHBxdFBVa2RiekU9
 mail: psc@georchestra.org
+o: geOrchestra
 cn: testeditor
 
 # testadmin, users, georchestra.org
@@ -122,10 +140,12 @@ objectClass: person
 objectClass: inetOrgPerson
 objectClass: top
 uid: testadmin
-description: USER
-description: ADMIN
+givenName: Test
+sn: ADMIN
+description: Admin user
 userPassword:: e1NIQX1kREU1SkEvMkVpVTRGMFFObUt5eXpuazUrN1E9
 mail: psc@georchestra.org
+o: geOrchestra
 cn: testadmin
 
 # extractorapp_privileged_admin, users, georchestra.org
