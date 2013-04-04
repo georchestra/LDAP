@@ -4,7 +4,7 @@ from passlib.hash import ldap_md5_crypt
 
 # you can configure that
 CSV_DELIMITER = ','
-CSV_QUOTECHAR = ''
+CSV_QUOTECHAR = '"'
 GROUP_SEPARATOR = ';'
 LDAP_ROOT_DN = 'dc=georchestra,dc=org'
 EOL = "\r\n"

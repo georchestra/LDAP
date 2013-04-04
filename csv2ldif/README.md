@@ -10,7 +10,7 @@ The CSV file is expected:
  * to be in the same folder as the script
  * to be called users.csv
  * to use commas as separators
- * to have no quotes around fields
+ * to have quotes (double) around fields
  * to expose LDAP user fields in this order: employeeNumber, uid, userPassword, mail, givenName, sn, o, title, telephoneNumber, groups
 
 Note that:
