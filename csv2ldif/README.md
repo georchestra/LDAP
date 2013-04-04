@@ -13,7 +13,9 @@ The CSV file is expected:
  * to have no quotes around fields
  * to expose LDAP user fields in this order: employeeNumber, uid, userPassword, mail, givenName, sn, o, title, telephoneNumber, groups
 
-(Note that group names should be separated by semicolons)
+Note that:
+ * uid, userPassword, mail & groups fields are mandatory, the others can be left blank (but not skipped).
+ * group names should be separated by semicolons
 
 
 Usage
