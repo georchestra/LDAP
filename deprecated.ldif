@@ -5,7 +5,7 @@ objectClass: top
 objectClass: posixGroup
 cn: EL_admin_GR
 gidNumber: 3
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+memberUid: testadmin
 description: Partner A GeOrchestra
 
 # EL_editor_GR, groups, georchestra.org
@@ -14,8 +14,8 @@ objectClass: top
 objectClass: posixGroup
 cn: EL_editor_GR
 gidNumber: 4
-memberUid: uid=testeditor,ou=users,dc=georchestra,dc=org
-memberUid: uid=testreviewer,ou=users,dc=georchestra,dc=org
+memberUid: testeditor
+memberUid: testreviewer
 
 
 # EL_reviewer_GR, groups, georchestra.org
@@ -25,7 +25,7 @@ objectClass: posixGroup
 gidNumber: 7
 cn: EL_reviewer_GR
 description: testreviewer is in this group
-memberUid: uid=testreviewer,ou=users,dc=georchestra,dc=org
+memberUid: testreviewer
 
 # EL_user_admin_GR, groups, georchestra.org
 dn: cn=EL_user_admin_GR,ou=groups,dc=georchestra,dc=org
@@ -34,8 +34,8 @@ objectClass: posixGroup
 gidNumber: 8
 cn: EL_user_admin_GR
 description: user and admins are in this group
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
-memberUid: uid=testuser,ou=users,dc=georchestra,dc=org
+memberUid: testadmin
+memberUid: testuser
 
 # GS_ADMIN, groups, georchestra.org
 dn: cn=GS_ADMIN,ou=groups,dc=georchestra,dc=org
@@ -44,9 +44,9 @@ objectClass: posixGroup
 gidNumber: 10
 cn: GS_ADMIN
 description: gsadmin is in this group
-memberUid: uid=gsadmin,ou=users,dc=georchestra,dc=org
-memberUid: uid=extractorapp_privileged_admin,ou=users,dc=georchestra,dc=org
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+memberUid: gsadmin
+memberUid: extractorapp_privileged_admin
+memberUid: testadmin
 
 # gsadmin, users, georchestra.org
 dn: uid=gsadmin,ou=users,dc=georchestra,dc=org
@@ -64,8 +64,8 @@ mail: yves.jacolin@camptocamp.com
 
 # GS_ADMIN_District1, groups, georchestra.org
 dn: cn=GS_ADMIN_District1,ou=groups,dc=georchestra,dc=org
-memberUid: uid=gsadmin,ou=users,dc=georchestra,dc=org
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+memberUid: gsadmin
+memberUid: testadmin
 gidNumber: 8
 objectClass: posixGroup
 objectClass: top
@@ -74,8 +74,8 @@ cn: GS_ADMIN_District1
 
 # GS_ADMIN_District2, groups, georchestra.org
 dn: cn=GS_ADMIN_District2,ou=groups,dc=georchestra,dc=org
-memberUid: uid=gsadmin,ou=users,dc=georchestra,dc=org
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+memberUid: gsadmin
+memberUid: testadmin
 gidNumber: 8
 objectClass: posixGroup
 objectClass: top

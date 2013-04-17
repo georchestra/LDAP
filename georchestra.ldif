@@ -26,8 +26,8 @@ objectClass: top
 objectClass: posixGroup
 gidNumber: 1
 cn: ADMINISTRATOR
-memberUid: uid=extractorapp_privileged_admin,ou=users,dc=georchestra,dc=org
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+memberUid: extractorapp_privileged_admin
+memberUid: testadmin
 
 # SV_ADMIN, groups, georchestra.org
 dn: cn=SV_ADMIN,ou=groups,dc=georchestra,dc=org
@@ -35,7 +35,7 @@ objectClass: top
 objectClass: posixGroup
 gidNumber: 2
 cn: SV_ADMIN
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+memberUid: testadmin
 
 # SV_ADMIN_USERS, groups, georchestra.org
 dn: cn=SV_ADMIN_USERS,ou=groups,dc=georchestra,dc=org
@@ -43,7 +43,7 @@ objectClass: top
 objectClass: posixGroup
 gidNumber: 3
 cn: SV_ADMIN_USERS
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+memberUid: testadmin
 
 # STAT_USER, groups, georchestra.org
 dn: cn=STAT_USER,ou=groups,dc=georchestra,dc=org
@@ -51,7 +51,7 @@ objectClass: top
 objectClass: posixGroup
 cn: STAT_USER
 gidNumber: 4
-memberUid: uid=testadmin,ou=users,dc=georchestra,dc=org
+memberUid: testadmin
 
 # SV_EDITOR, groups, georchestra.org
 dn: cn=SV_EDITOR,ou=groups,dc=georchestra,dc=org
@@ -59,7 +59,7 @@ objectClass: top
 objectClass: posixGroup
 cn: SV_EDITOR
 gidNumber: 5
-memberUid: uid=testeditor,ou=users,dc=georchestra,dc=org
+memberUid: testeditor
 
 # SV_REVIEWER, groups, georchestra.org
 dn: cn=SV_REVIEWER,ou=groups,dc=georchestra,dc=org
@@ -67,7 +67,7 @@ objectClass: top
 objectClass: posixGroup
 cn: SV_REVIEWER
 gidNumber: 6
-memberUid: uid=testreviewer,ou=users,dc=georchestra,dc=org
+memberUid: testreviewer
 
 # SV_USER, groups, georchestra.org
 dn: cn=SV_USER,ou=groups,dc=georchestra,dc=org
@@ -75,7 +75,7 @@ objectClass: top
 objectClass: posixGroup
 gidNumber: 7
 cn: SV_USER
-memberUid: uid=testuser,ou=users,dc=georchestra,dc=org
+memberUid: testuser
 
 
 # users, georchestra.org
