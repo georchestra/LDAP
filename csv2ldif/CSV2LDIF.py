@@ -125,5 +125,5 @@ for groupName,o in groups.items():
     print "objectClass: top" + EOL,
     print "cn: " + groupName + EOL,
     for memberUid in o['users']:
-        print "memberUid: uid=" + memberUid + ",ou=users," + LDAP_ROOT_DN + EOL,
+        print "memberUid: " + memberUid + EOL,
     print "gidNumber: " + str(o['id']) + EOL
