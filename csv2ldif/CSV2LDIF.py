@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import csv
-from passlib.hash import ldap_md5_crypt
+from passlib.hash import ldap_salted_sha1
 
 # you can configure that
 CSV_DELIMITER = ','
@@ -79,7 +79,7 @@ def getField(row, idx, fieldname):
 for row in inputReader:
     employeeNumber   = row[0] # user id
     uid              = getField(row, 1, 'uid') # login
-    userPassword     = ldap_md5_crypt.encrypt(getField(row, 2, 'userPassword')) # password
+    userPassword     = ldap_salted_sha1.encrypt(getField(row, 2, 'userPassword')) # password
     mail             = getField(row, 3, 'mail') # email
     givenName        = row[4] # first name
     sn               = row[5] # second name
