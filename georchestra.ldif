@@ -37,12 +37,12 @@ gidNumber: 2
 cn: SV_ADMIN
 memberUid: testadmin
 
-# SV_ADMIN_USERS, groups, georchestra.org
-dn: cn=SV_ADMIN_USERS,ou=groups,dc=georchestra,dc=org
+# ADMIN_USERS, groups, georchestra.org
+dn: cn=ADMIN_USERS,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: posixGroup
 gidNumber: 3
-cn: SV_ADMIN_USERS
+cn: ADMIN_USERS
 memberUid: testadmin
 
 # STAT_USER, groups, georchestra.org

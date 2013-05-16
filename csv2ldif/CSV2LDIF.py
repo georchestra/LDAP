@@ -45,7 +45,7 @@ groups = {
         'id': 2,
         'users': [],
     },
-    'SV_ADMIN_USERS': {
+    'ADMIN_USERS': {
         'id': 3,
         'users': [],
     },
