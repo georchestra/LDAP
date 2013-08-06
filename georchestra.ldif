@@ -77,6 +77,12 @@ gidNumber: 7
 cn: SV_USER
 memberUid: testuser
 
+# PENDING_USERS, groups, georchestra.org
+dn: cn=PENDING_USERS,ou=groups,dc=georchestra,dc=org
+objectClass: top
+objectClass: posixGroup
+gidNumber: 8
+cn: PENDING_USERS
 
 # users, georchestra.org
 dn: ou=users,dc=georchestra,dc=org
