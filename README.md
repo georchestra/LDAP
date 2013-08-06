@@ -12,8 +12,7 @@ There are 2 main ways of having openLDAP configured :
 We document here the second case (slapd.d-style configuration).
 
 
-The file **georchestra-bootstrap.ldif** allows to first activate the hdb 
-backend module (needed to store our LDAP tree) then create the db entry. 
+The file **georchestra-bootstrap.ldif** allows to create the db entry.
 It should mainly be used this way:
 
     $ sudo ldapadd -Y EXTERNAL -H ldapi:/// -f georchestra-bootstrap.ldif
