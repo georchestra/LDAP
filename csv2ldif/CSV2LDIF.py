@@ -45,11 +45,11 @@ groups = {
         'id': 2,
         'users': [],
     },
-    'ADMIN_USERS': {
+    'MOD_LDAPADMIN': {
         'id': 3,
         'users': [],
     },
-    'STAT_USER': {
+    'MOD_ANALYTICS': {
         'id': 4,
         'users': [],
     },
