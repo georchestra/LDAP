@@ -6,14 +6,6 @@
 # requesting: ALL
 #
 
-# admin, georchestra.org
-dn: cn=admin,dc=georchestra,dc=org
-objectClass: simpleSecurityObject
-objectClass: organizationalRole
-cn: admin
-description: LDAP administrator
-userPassword:: e1NIQX02Y005Y3dHKytIdGxnWFFFNy8ycER3MC81S0E9
-
 # groups, georchestra.org
 dn: ou=groups,dc=georchestra,dc=org
 objectClass: organizationalUnit
