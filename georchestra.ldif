@@ -92,12 +92,11 @@ ou: users
 
 # testuser, users, georchestra.org
 dn: uid=testuser,ou=users,dc=georchestra,dc=org
-sn: Person
 objectClass: organizationalPerson
 objectClass: person
 objectClass: inetOrgPerson
 objectClass: top
-mail: psc@georchestra.org
+mail: psc+testuser@georchestra.org
 o: geOrchestra
 uid: testuser
 givenName: Test
@@ -108,7 +107,6 @@ cn: testuser
 
 # testreviewer, users, georchestra.org
 dn: uid=testreviewer,ou=users,dc=georchestra,dc=org
-sn: Person
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -118,13 +116,12 @@ givenName: Test
 sn: REVIEWER
 description: Reviewer
 userPassword:: e1NIQX1Nb3IzdXZ5cnpISWpHK0crSEcvblhxZW8reWc9
-mail: psc@georchestra.org
+mail: psc+testreviewer@georchestra.org
 o: geOrchestra
 cn: testreviewer
 
 # testeditor, users, georchestra.org
 dn: uid=testeditor,ou=users,dc=georchestra,dc=org
-sn: Person
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -134,13 +131,12 @@ givenName: Test
 sn: EDITOR
 description: editor
 userPassword:: e1NIQX1mVTFvSmdzV0FEZ1ZtTHBHeHBxdFBVa2RiekU9
-mail: psc@georchestra.org
+mail: psc+testeditor@georchestra.org
 o: geOrchestra
 cn: testeditor
 
 # testadmin, users, georchestra.org
 dn: uid=testadmin,ou=users,dc=georchestra,dc=org
-sn: Person
 objectClass: organizationalPerson
 objectClass: person
 objectClass: inetOrgPerson
@@ -150,18 +146,18 @@ givenName: Test
 sn: ADMIN
 description: Admin user
 userPassword:: e1NIQX1kREU1SkEvMkVpVTRGMFFObUt5eXpuazUrN1E9
-mail: psc@georchestra.org
+mail: psc+testadmin@georchestra.org
 o: geOrchestra
 cn: testadmin
 
 # extractorapp_privileged_admin, users, georchestra.org
 dn: uid=extractorapp_privileged_admin,ou=users,dc=georchestra,dc=org
-sn: Person
+sn: extractorapp_privileged_admin
 objectClass: organizationalPerson
 objectClass: person
 objectClass: inetOrgPerson
 objectClass: top
-mail: psc@georchestra.org
+mail: psc+extractorapp_privileged_admin@georchestra.org
 uid: extractorapp_privileged_admin
 cn: extractorapp_privileged_admin
 description: Do not modify.  This is a required user for extractorapp
