@@ -92,7 +92,7 @@ for row in inputReader:
         if not groups.has_key(currentGroup):
             groups[currentGroup] = {'users': [], 'id': currentUid}
             currentUid += 1
-        groups[currentGroup]['users'].append(uid)
+        groups[currentGroup]['users'].append("uid="+uid+",ou=users," + LDAP_ROOT_DN)
 
     rownb += 1
     print "dn: uid="+uid+",ou=users," + LDAP_ROOT_DN + EOL,
@@ -121,9 +121,9 @@ for row in inputReader:
 
 for groupName,o in groups.items():
     print "dn: cn=" + groupName + ",ou=groups," + LDAP_ROOT_DN + EOL,
-    print "objectClass: posixGroup" + EOL,
+    print "objectClass: groupOfNames" + EOL,
     print "objectClass: top" + EOL,
     print "cn: " + groupName + EOL,
-    for memberUid in o['users']:
-        print "memberUid: " + memberUid + EOL,
-    print "gidNumber: " + str(o['id']) + EOL
+    for member in o['users']:
+        print "member: " + member + EOL,
+    print EOL
