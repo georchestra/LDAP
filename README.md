@@ -50,12 +50,10 @@ ldapadd -D"cn=admin,dc=georchestra,dc=org" -W -f georchestra.ldif
 Note that you are free to customize the users (entries under the "users" OrganizationUnit) to fit your needs, provided you keep the required extractorapp_privileged_admin.
 For the testuser, testreviewer, testeditor and testadmin users, passwords are identical to login.
 
-## Optional - uniqueness constraint
+## Optional - "memberof" overlay
 
-Another file is provided but it is optional: **gidnumber-uniqueness.ldif**. 
-It aims to add a unicity constraint on each objects under the base
-ou=groups,dc=georchestra,dc=org, so that another group is added, it should have
-a unique gidNumber attribute.
+The "memberof" overlay is great to check if a user is a member of a given group.
+The **georchestra-memberof.ldif** file adds the module and configures the overlay.
 
 ## Manage the directory
 
