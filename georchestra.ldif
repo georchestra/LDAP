@@ -16,6 +16,7 @@ uid: testuser
 givenName: Test
 sn: USER
 description: USER
+employeeNumber: 1
 userPassword:: e1NIQX1SY1Z4b1ZiZHp2UVRVYWNUdk4zdVc2ZnBWR0E9
 cn: testuser
 
@@ -29,6 +30,7 @@ uid: testreviewer
 givenName: Test
 sn: REVIEWER
 description: Reviewer
+employeeNumber: 2
 userPassword:: e1NIQX1Nb3IzdXZ5cnpISWpHK0crSEcvblhxZW8reWc9
 mail: psc+testreviewer@georchestra.org
 o: geOrchestra
@@ -44,6 +46,7 @@ uid: testeditor
 givenName: Test
 sn: EDITOR
 description: editor
+employeeNumber: 3
 userPassword:: e1NIQX1mVTFvSmdzV0FEZ1ZtTHBHeHBxdFBVa2RiekU9
 mail: psc+testeditor@georchestra.org
 o: geOrchestra
@@ -59,6 +62,7 @@ uid: testadmin
 givenName: Test
 sn: ADMIN
 description: Admin user
+employeeNumber: 4
 userPassword:: e1NIQX1kREU1SkEvMkVpVTRGMFFObUt5eXpuazUrN1E9
 mail: psc+testadmin@georchestra.org
 o: geOrchestra
@@ -74,6 +78,7 @@ objectClass: top
 mail: psc+extractorapp_privileged_admin@georchestra.org
 uid: extractorapp_privileged_admin
 cn: extractorapp_privileged_admin
+employeeNumber: 5
 description: Do not modify.  This is a required user for extractorapp
 userPassword:: e1NIQX1XMlY4d2UrOFdNanpma28rMUtZVDFZcWZFVDQ9
 
