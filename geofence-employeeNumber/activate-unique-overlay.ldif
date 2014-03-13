@@ -1,0 +1,14 @@
+dn: cn=module,cn=config
+objectClass: olcModuleList
+cn: module
+olcModulePath: /usr/lib/ldap
+olcModuleLoad: unique
+
+dn: olcOverlay=unique,olcDatabase={0}hdb,cn=config
+objectClass: olcUniqueConfig
+objectClass: olcOverlayConfig
+objectClass: olcConfig
+objectClass: top
+olcOverlay: {0}unique
+olcUniqueAttribute: employeeNumber
+
