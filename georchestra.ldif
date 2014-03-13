@@ -124,7 +124,7 @@ dn: cn=MOD_ANALYTICS,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: groupOfNames
 cn: MOD_ANALYTICS
-ou: 3
+ou: 4
 description: This group grants access to the Analytics application
 member: uid=testadmin,ou=users,dc=georchestra,dc=org
 member: uid=fakeuser
@@ -134,7 +134,7 @@ dn: cn=SV_EDITOR,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: groupOfNames
 cn: SV_EDITOR
-ou: 4
+ou: 5
 description: This group grants edit rights in GeoNetwork and Mapfishapp
 member: uid=testeditor,ou=users,dc=georchestra,dc=org
 member: uid=fakeuser
@@ -144,7 +144,7 @@ dn: cn=SV_REVIEWER,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: groupOfNames
 cn: SV_REVIEWER
-ou: 5
+ou: 6
 description: This group grants reviewer rights in GeoNetwork
 member: uid=testreviewer,ou=users,dc=georchestra,dc=org
 member: uid=fakeuser
@@ -154,7 +154,7 @@ dn: cn=SV_USER,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: groupOfNames
 cn: SV_USER
-ou: 6
+ou: 7
 description: This group grants basic, authenticated access to the whole SDI
 member: uid=testuser,ou=users,dc=georchestra,dc=org
 member: uid=fakeuser
@@ -164,7 +164,7 @@ dn: cn=PENDING_USERS,ou=groups,dc=georchestra,dc=org
 objectClass: top
 objectClass: groupOfNames
 cn: PENDING_USERS
-ou: 7
+ou: 8
 description: This group does not grant any right inside the SDI. Users in this group are requesting a fully fledged account.
 member: uid=fakeuser
 
