@@ -6,7 +6,7 @@ import sys
 import base64
 
 # This sample script allows to add an unique identifier attribute
-# on each user of an existing LDAP tree.
+# on each user and group of an existing LDAP tree.
 
 # it is recommended to load the unique OpenLDAP overlay before using this
 # script. See:
@@ -25,7 +25,13 @@ USERS_UID_ATTRIBUTE='employeeNumber'
 USERS_LDAP_FILTER='(&(objectClass=%s)(!(%s=*)))' % (USERS_OBJ_CLASS,USERS_UID_ATTRIBUTE,)
 USERS_LDAP_BASEDN='ou=users,dc=georchestra,dc=org'
 
-current_userid = 0
+GROUPS_OBJ_CLASS='groupOfNames'
+GROUPS_UID_ATTRIBUTE='ou'
+GROUPS_LDAP_FILTER='(&(objectClass=%s)(!(%s=*)))' % (GROUPS_OBJ_CLASS, GROUPS_UID_ATTRIBUTE,)
+GROUPS_LDAP_BASEDN='ou=groups,dc=georchestra,dc=org'
+
+current_userid  = 0
+current_groupid = 0
 # Connection to the LDAP server
 
 ldapCnx = ldap.initialize(LDAP_URI)
@@ -47,6 +53,28 @@ def openldap_add_uid_to_user(user_dn, number, dry_run):
     print STR_GREEN.format("[dry-run] Assigning uid %s to user %s\n" % (number, user_dn,))
   return True
 
+# Checks if a group already owns the identifier
+def gid_exists(gid):
+  ldap_result_id = ldapCnx.search(GROUPS_LDAP_BASEDN, ldap.SCOPE_ONELEVEL,"(%s=%d)" % (GROUPS_UID_ATTRIBUTE, gid,), None, 1)
+  _ , result_data = ldapCnx.result(ldap_result_id, 0)
+  if (result_data == []):
+    return False
+  else:
+    return True
+
+# Adds a unique identifier to the group
+def openldap_add_uid_to_group(group_dn, number, dry_run):
+  mod_attrs = [(ldap.MOD_ADD, GROUPS_UID_ATTRIBUTE, str(number))]
+  if not dry_run:
+    try:
+      ldapCnx.modify_s(group_dn, mod_attrs)
+    except ldap.LDAPError, e:
+      print STR_RED.format("[Error]: %s" % e)
+      return False
+  else:
+    print STR_GREEN.format("[dry-run] Assigning uid %s to group %s\n" % (number, group_dn,))
+  return True
+
 # Actually do something
 if __name__ == "__main__":
   users  = []
@@ -62,13 +90,36 @@ if __name__ == "__main__":
           users.append(result_data)
   except ldap.LDAPError, e:
     print STR_RED.format(e)
-  # Step 1: Removing non protected users from the OpenLDAP that are not listed in
-  # the Active Directory
+  groups = []
+  # getting groups from the LDAP
+  try:
+    ldap_result_id = ldapCnx.search(GROUPS_LDAP_BASEDN, ldap.SCOPE_ONELEVEL, GROUPS_LDAP_FILTER, None, 1)
+    while 1:
+      result_type, result_data = ldapCnx.result(ldap_result_id, 0)
+      if (result_data == []):
+        break
+      else:
+        if result_type == ldap.RES_SEARCH_ENTRY:
+          groups.append(result_data)
+  except ldap.LDAPError, e:
+    print STR_RED.format(e)
+
+  # Adds a unique identifier on the users
   for usr in users:
     dn, _ = usr[0]
     print STR_GREEN.format(dn)
     openldap_add_uid_to_user(dn, current_userid, False)
     current_userid += 1
+
+  # Adds a unique identifier on the groups
+  for group in groups:
+    dn, _ = group[0]
+    print STR_GREEN.format(dn)
+    while (gid_exists(current_groupid)):
+      current_groupid += 1
+    openldap_add_uid_to_group(dn, current_groupid, False)
+    current_groupid += 1
+
   # end: disconnect
   ldapCnx.unbind_s()
 
