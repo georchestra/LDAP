@@ -47,7 +47,7 @@ The **georchestra.ldif** file allows one to create the default geOrchestra users
 ldapadd -D"cn=admin,dc=georchestra,dc=org" -W -f georchestra.ldif
 ```
 
-Note that you are free to customize the users (entries under the "users" OrganizationUnit) to fit your needs, provided you keep the required extractorapp_privileged_admin.
+Note that you are free to customize the users (entries under the "users" OrganizationUnit) to fit your needs, provided you keep the required geoserver_privileged_user.
 For the testuser, testreviewer, testeditor and testadmin users, passwords are identical to login.
 
 ## Optional - "memberof" overlay
