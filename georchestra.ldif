@@ -97,7 +97,7 @@ objectClass: groupOfNames
 cn: ADMINISTRATOR
 ou: 1
 description: This group grants admin access to GeoServer
-member: uid=extractorapp_privileged_admin,ou=users,dc=georchestra,dc=org
+member: uid=geoserver_privileged_user,ou=users,dc=georchestra,dc=org
 member: uid=testadmin,ou=users,dc=georchestra,dc=org
 member: uid=fakeuser
 
