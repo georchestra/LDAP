@@ -1,64 +1,39 @@
 # LDAP
 
-This repository aims to configure and populate an OpenLDAP directory before installing [geOrchestra](http://georchestra.org).
+This repository holds the required files to configure and populate an OpenLDAP directory before installing the [geOrchestra](http://www.georchestra.org) SDI.
 
-There are 2 main ways of having OpenLDAP configured :
+Please refer to the INSTALL guide for instructions.
 
-- One using a single conf file (on debian/ubuntu systems, located in
-  /etc/ldap/sldapd.conf)
+## georchestra-bootstrap.ldif
 
-- A new one which tends to store the configuration into a specific LDAP branch
-  (name cn=config), and composed of several files located generally into
-  /etc/ldap/slapd.d).
+This file creates the database.
 
-We document here the second case (slapd.d-style configuration).
+## georchestra-root.ldif
 
-## Database entry
+This files creates the root DN, which is by default ```dc=georchestra,dc=org```.
 
-The file **georchestra-bootstrap.ldif** allows to create the db entry.
-It should mainly be used this way:
+## georchestra.ldif
 
-```
-sudo ldapadd -Y EXTERNAL -H ldapi:/// -f georchestra-bootstrap.ldif
-```
+This file creates a basic LDAP tree for geOrchestra.
 
-## Root DN
+It creates 2 Organisational Units (ou):
+ * ```ou=users,dc=georchestra,dc=org``` 
+ * ```ou=groups,dc=georchestra,dc=org```
 
-If everything was successful with the previous command, you now have to create
-the root DN. Note that the previous command should have set the default
-administrator account as:
+The basic users:
+ * ```testuser``` is a member of SV_USER. The password is testuser.
+ * ```testreviewer``` is a member of SV_REVIEWER. The password is testreviewer.
+ * ```testeditor``` is a member of SV_EDITOR. The password is testeditor.
+ * ```testadmin``` is a member of SV_ADMIN, ADMINISTRATOR and MOD_* groups. The password is testadmin.
+ * ```geoserver_privileged_user``` is a required user. It is internally used by the extractorapp, mapfishapp & geofence modules. The default password is ```gerlsSnFd6SmM``` (you should change it, and update the ```shared.privileged.geoserver.pass``` option in your shared.maven.filters file).
 
-```
-dn: cn=admin,dc=georchestra,dc=org
-password: secret
-```
-
-You can then issue the following command in order to create the root DN with **georchestra-root.ldif**:
-
-```
-ldapadd -D"cn=admin,dc=georchestra,dc=org" -W -f georchestra-root.ldif
-```
-
-## Default geOrchestra users and groups
-
-The **georchestra.ldif** file allows one to create the default geOrchestra users & groups:
-
-```
-ldapadd -D"cn=admin,dc=georchestra,dc=org" -W -f georchestra.ldif
-```
-
-Note that you are free to customize the users (entries under the "users" OrganizationUnit) to fit your needs, provided you keep the required geoserver_privileged_user.
-For the testuser, testreviewer, testeditor and testadmin users, passwords are identical to login.
-
-## Optional - "memberof" overlay
-
-The "memberof" overlay is great to check if a user is a member of a given group.
-The **georchestra-memberof.ldif** file adds the module and configures the overlay.
-
-## Manage the directory
-
-To easily manage the directory from cli, use `ldapvi` (install with `sudo apt-get install ldapvi`)
-
-```
-ldapvi --host localhost -D "cn=admin,dc=georchestra,dc=org" -w "secret" -b "dc=georchestra,dc=org"
-```
+The groups:
+ * ```ADMINISTRATOR``` is for GeoServer administrators,
+ * ```MOD_LDAPADMIN``` grants access to the ldapadmin webapp (where one can manage users and groups),
+ * ```MOD_ANALYTICS``` grants access rights to the analytics application,
+ * ```MOD_EXTRACTORAPP``` grants access to the extractor application,
+ * ```SV_ADMIN``` is for GeoNetwork administrators,
+ * ```SV_EDITOR``` is for metadata editors,
+ * ```SV_REVIEWER``` is for metadata reviewers,
+ * ```SV_USER``` is for the basic SDI users,
+ * ```PENDING_USERS``` is the landing group for people asking an account on the platform. This group gives no right by default.
