@@ -1,16 +1,25 @@
 # LDAP
 
-This repository holds the required files to configure and populate an OpenLDAP directory before installing the [geOrchestra](http://www.georchestra.org) SDI.
+This repository holds the required files to configure and populate an OpenLDAP directory before installing the [geOrchestra](http://www.georchestra.org) SDI.  
 
-Please refer to the INSTALL guide for instructions.
+Please refer to the [geOrchestra documentation](https://github.com/georchestra/georchestra/blob/master/README.md) for instructions, and **use the branch matching your geOrchestra version** !
+
 
 ## georchestra-bootstrap.ldif
 
 This file creates the database.
 
+Note that, depending on your Debian version, you might need to use a different version of this file: 
+ * **geOrchestra <= 14.12** is supposed to be installed on **Debian Wheezy**, where OpenLdap's default backend is **HDB**
+ * **geOrchestra >= 15.06** targets **Debian Jessie** where the backend is **LMDB**
+
+Please refer to [issue 856](https://github.com/georchestra/georchestra/issues/856) for more information.
+
+
 ## georchestra-root.ldif
 
 This files creates the root DN, which is by default ```dc=georchestra,dc=org```.
+
 
 ## georchestra.ldif
 
@@ -21,10 +30,10 @@ It creates 2 Organisational Units (ou):
  * ```ou=groups,dc=georchestra,dc=org```
 
 The basic users:
- * ```testuser``` is a member of SV_USER. The password is testuser.
- * ```testreviewer``` is a member of SV_REVIEWER. The password is testreviewer.
- * ```testeditor``` is a member of SV_EDITOR. The password is testeditor.
- * ```testadmin``` is a member of SV_ADMIN, ADMINISTRATOR and MOD_* groups. The password is testadmin.
+ * ```testuser``` is a member of SV_USER. The password is **testuser**.
+ * ```testreviewer``` is a member of SV_REVIEWER. The password is **testreviewer**.
+ * ```testeditor``` is a member of SV_EDITOR. The password is **testeditor**.
+ * ```testadmin``` is a member of SV_ADMIN, ADMINISTRATOR and MOD_* groups. The password is **testadmin**
  * ```geoserver_privileged_user``` is a required user. It is internally used by the extractorapp, mapfishapp & geofence modules. The default password is ```gerlsSnFd6SmM``` (you should change it, and update the ```shared.privileged.geoserver.pass``` option in your shared.maven.filters file).
 
 The groups:
