@@ -25,7 +25,7 @@ USERS_UID_ATTRIBUTE='employeeNumber'
 USERS_LDAP_FILTER='(&(objectClass=%s)(!(%s=*)))' % (USERS_OBJ_CLASS,USERS_UID_ATTRIBUTE,)
 USERS_LDAP_BASEDN='ou=users,dc=georchestra,dc=org'
 
-GROUPS_OBJ_CLASS='groupOfNames'
+GROUPS_OBJ_CLASS='groupOfMembers'
 GROUPS_UID_ATTRIBUTE='ou'
 GROUPS_LDAP_FILTER='(&(objectClass=%s)(!(%s=*)))' % (GROUPS_OBJ_CLASS, GROUPS_UID_ATTRIBUTE,)
 GROUPS_LDAP_BASEDN='ou=groups,dc=georchestra,dc=org'

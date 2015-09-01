@@ -121,7 +121,7 @@ for row in inputReader:
 
 for groupName,o in groups.items():
     print "dn: cn=" + groupName + ",ou=groups," + LDAP_ROOT_DN + EOL,
-    print "objectClass: groupOfNames" + EOL,
+    print "objectClass: groupOfMembers" + EOL,
     print "objectClass: top" + EOL,
     print "cn: " + groupName + EOL,
     for member in o['users']:
