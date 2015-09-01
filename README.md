@@ -4,6 +4,9 @@ This repository holds the required files to configure and populate an OpenLDAP d
 
 Please refer to the [geOrchestra documentation](https://github.com/georchestra/georchestra/blob/master/README.md) for instructions, and **use the branch matching your geOrchestra version** !
 
+## georchestra-groupofmembers.ldif
+
+This file imports ```groupOfMembers``` LDAP objectClass into OpenLdap available schemas. It allows to have empty groups, which the default ```groupOfNames``` doesn't permit. ```groupOfMembers``` comes from RFC2037bis and is used in lots of places.
 
 ## georchestra-bootstrap.ldif
 
