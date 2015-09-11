@@ -93,94 +93,85 @@ ou: groups
 # ADMINISTRATOR, groups, georchestra.org
 dn: cn=ADMINISTRATOR,ou=groups,dc=georchestra,dc=org
 objectClass: top
-objectClass: groupOfNames
+objectClass: groupOfMembers
 cn: ADMINISTRATOR
 ou: 1
 description: This group grants admin access to GeoServer
 member: uid=geoserver_privileged_user,ou=users,dc=georchestra,dc=org
 member: uid=testadmin,ou=users,dc=georchestra,dc=org
-member: uid=fakeuser
 
 
 # PENDING_USERS, groups, georchestra.org
 dn: cn=PENDING_USERS,ou=groups,dc=georchestra,dc=org
 objectClass: top
-objectClass: groupOfNames
+objectClass: groupOfMembers
 cn: PENDING_USERS
 ou: 2
 description: This group does not grant any right inside the SDI. Users in this group are requesting a fully fledged account.
-member: uid=fakeuser
 
 
 # MOD_LDAPADMIN, groups, georchestra.org
 dn: cn=MOD_LDAPADMIN,ou=groups,dc=georchestra,dc=org
 objectClass: top
-objectClass: groupOfNames
+objectClass: groupOfMembers
 cn: MOD_LDAPADMIN
 ou: 10
 description: This group grants access to the LDAPadmin private User Interface
 member: uid=testadmin,ou=users,dc=georchestra,dc=org
-member: uid=fakeuser
 
 # MOD_ANALYTICS, groups, georchestra.org
 dn: cn=MOD_ANALYTICS,ou=groups,dc=georchestra,dc=org
 objectClass: top
-objectClass: groupOfNames
+objectClass: groupOfMembers
 cn: MOD_ANALYTICS
 ou: 11
 description: This group grants access to the Analytics application
 member: uid=testadmin,ou=users,dc=georchestra,dc=org
-member: uid=fakeuser
 
 # MOD_EXTRACTORAPP, groups, georchestra.org
 dn: cn=MOD_EXTRACTORAPP,ou=groups,dc=georchestra,dc=org
 objectClass: top
-objectClass: groupOfNames
+objectClass: groupOfMembers
 cn: MOD_EXTRACTORAPP
 ou: 12
 description: This group grants access to the Extractorapp application
 member: uid=testadmin,ou=users,dc=georchestra,dc=org
-member: uid=fakeuser
 
 
 # SV_ADMIN, groups, georchestra.org
 dn: cn=SV_ADMIN,ou=groups,dc=georchestra,dc=org
 objectClass: top
-objectClass: groupOfNames
+objectClass: groupOfMembers
 cn: SV_ADMIN
 ou: 20
 description: This group grants admin access to GeoNetwork
 member: uid=testadmin,ou=users,dc=georchestra,dc=org
-member: uid=fakeuser
 
 # SV_EDITOR, groups, georchestra.org
 dn: cn=SV_EDITOR,ou=groups,dc=georchestra,dc=org
 objectClass: top
-objectClass: groupOfNames
+objectClass: groupOfMembers
 cn: SV_EDITOR
 ou: 21
 description: This group grants edit rights in GeoNetwork and Mapfishapp
 member: uid=testeditor,ou=users,dc=georchestra,dc=org
-member: uid=fakeuser
 
 # SV_REVIEWER, groups, georchestra.org
 dn: cn=SV_REVIEWER,ou=groups,dc=georchestra,dc=org
 objectClass: top
-objectClass: groupOfNames
+objectClass: groupOfMembers
 cn: SV_REVIEWER
 ou: 22
 description: This group grants reviewer rights in GeoNetwork
 member: uid=testreviewer,ou=users,dc=georchestra,dc=org
-member: uid=fakeuser
 
 # SV_USER, groups, georchestra.org
 dn: cn=SV_USER,ou=groups,dc=georchestra,dc=org
 objectClass: top
-objectClass: groupOfNames
+objectClass: groupOfMembers
 cn: SV_USER
 ou: 23
 description: This group grants basic, authenticated access to the whole SDI
 member: uid=testuser,ou=users,dc=georchestra,dc=org
-member: uid=fakeuser
 
 
