@@ -48,4 +48,4 @@ The groups:
  * ```SV_EDITOR``` is for metadata editors,
  * ```SV_REVIEWER``` is for metadata reviewers,
  * ```SV_USER``` is for the basic SDI users,
- * ```PENDING_USERS``` is the landing group for people asking an account on the platform. This group gives no right by default.
+ * ```PENDING``` is the landing group for people asking an account on the platform. This group gives no right by default.
