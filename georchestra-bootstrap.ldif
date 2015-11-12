@@ -7,6 +7,9 @@ olcDbDirectory: /var/lib/ldap
 olcRootDN: cn=admin,dc=georchestra,dc=org
 olcRootPW: secret
 olcDbIndex: objectClass eq
+olcDbIndex: cn eq,sub,subfinal
+olcDbIndex: mail eq,sub
+olcDbIndex: uid eq
 olcLastMod: TRUE
 olcDbCheckpoint: 512 30
 olcDbMaxSize: 1073741824
