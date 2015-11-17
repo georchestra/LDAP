@@ -9,6 +9,7 @@ olcRootPW: secret
 olcDbIndex: objectClass eq
 olcDbIndex: cn eq,sub,subfinal
 olcDbIndex: mail eq,sub
+olcDbIndex: member eq
 olcDbIndex: uid eq
 olcLastMod: TRUE
 olcDbCheckpoint: 512 30
