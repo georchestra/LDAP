@@ -1,5 +1,4 @@
-As its name suggests, the CSV2LDIF python script allows one to create a LDIF file from a CSV.
-
+As its name suggests, the [CSV2LDIF python script](./CSV2LDIF.py) allows one to create a LDIF file from a CSV.
 
 Pre-Requisites
 ==============
