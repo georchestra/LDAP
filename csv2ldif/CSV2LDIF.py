@@ -41,7 +41,7 @@ groups = {
         'id': 1,
         'users': [],
     },
-    'SV_ADMIN': {
+    'GN_ADMIN': {
         'id': 2,
         'users': [],
     },
@@ -53,15 +53,15 @@ groups = {
         'id': 4,
         'users': [],
     },
-    'SV_EDITOR': {
+    'GN_EDITOR': {
         'id': 5,
         'users': [],
     },
-    'SV_REVIEWER': {
+    'GN_REVIEWER': {
         'id': 6,
         'users': [],
     },
-    'SV_USER': {
+    'USER': {
         'id': 7,
         'users': [],
     },
