@@ -1,2 +1,2 @@
 "ID","LOGIN","PASSWORD","EMAIL","FIRSTNAME","LASTNAME","ORG","FUNCTION","TEL","ADDRESS","DESCRIPTION","ROLES"
-"1","pdupond","pdupond@domain.ext","Pierre","DUPOND","Region-Grand-Est","Administrateur de plateforme geOrchestra","01 23 45 67 89","","","USER;SV_ADMIN;SUPERUSER"
+"1","pdupond","my_scret_password","pdupond@domain.ext","Pierre","DUPOND","Region-Grand-Est","Administrateur de plateforme geOrchestra","01 23 45 67 89","","","USER;SV_ADMIN;SUPERUSER"
